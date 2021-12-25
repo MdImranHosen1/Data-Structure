@@ -48,19 +48,22 @@ int main(){
   {
   	constractbit(i);
   }
+  cout<<"query array:\n";
   for (int i = 1; i < n+1; ++i)
   {
   	cout<<bit[i]<<" ";
   }
   int query;
-  cout<<"Enter query number"<<endl;
+  cout<<"\nEnter query number"<<endl;
   cin>>query;
   for (int i = 0; i < query; ++i)
   {
-  	int r;
-  	cin>>r;
-  	int sum=sumbit(r);
-  	cout<<sum<<endl;
+  	int l,r;
+  	cin>>l>>r;
+  	l--;
+  	int sumMx=sumbit(r);
+  	int sumMi=sumbit(l);
+  	cout<<sumMx-sumMi<<endl;
   }
   return 0;
 }
