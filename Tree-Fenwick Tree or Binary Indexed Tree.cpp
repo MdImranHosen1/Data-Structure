@@ -37,6 +37,13 @@ int sumbit(int i)
 	}
 	return sum;
 }
+int update(int i,int value)
+{
+	for (int bi = i;bi<=n ;bi+=(-bi&bi))
+	{
+		bit[bi]+=value;
+	}
+}
 int main(){
   cin>> n;
   for (int i = 1; i <= n; ++i)
@@ -54,7 +61,7 @@ int main(){
   	cout<<bit[i]<<" ";
   }
   int query;
-  cout<<"\nEnter query number"<<endl;
+  cout<<"\nEnter query number of summation"<<endl;
   cin>>query;
   for (int i = 0; i < query; ++i)
   {
@@ -64,6 +71,15 @@ int main(){
   	int sumMx=sumbit(r);
   	int sumMi=sumbit(l);
   	cout<<sumMx-sumMi<<endl;
+  }
+  //for update
+  int nu,i;
+  cin>>i>>nu;
+  update(i,nu);
+  cout<<"query array:\n";
+  for (int i = 1; i < n+1; ++i)
+  {
+  	cout<<bit[i]<<" ";
   }
   return 0;
 }
